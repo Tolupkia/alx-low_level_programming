@@ -1,42 +1,35 @@
 #include <stdio.h>
 
 /**
- * main - print all possible comb of two digit numbers
- * Return: Always 0(Success)
+ * main - Entry point
+ * Return: Always 0 (success/correct)
  */
 
 int main(void)
 {
-	int i, j;
-	int a, b, c, d;
+	int first_nums;
+	int second_nums;
 
-	for (i = 0; i < 100; i++)
+	for (first_nums = 0; first_nums < 100; first_nums++)
 	{
-		a = i / 10;/*doubles fnum*/
-		b = i % 10;/*singles fnum*/
-
-		for (j = 0; j < 100; j++)
+		for (second_nums = first_nums + 1; second_nums < 100; second_nums++)
 		{
-			c = j / 10;/*doubles snum*/
-			d = j % 10;/*singles snum*/
+			putchar(first_nums / 10 + '0');
+			putchar(first_nums % 10 + '0');
+			putchar(' ');
+			putchar(second_nums / 10 + '0');
+			putchar(second_nums % 10 + '0');
 
-			if (a < c || (a == c && b > d))
+			if (first_nums == 98 && second_nums == 99)
 			{
-				putchar(a + '0');
-				putchar(b + '0');
-				putchar(32);
-				putchar(c + '0');
-				putchar(d + '0');
-
-				if (!(a == 9 && b == 8))
-				{
-					putchar(44);
-					putchar(32);
-				}
+				break;
 			}
+
+			putchar(',');
+			putchar(' ');
 		}
 	}
-	putchar(10);
+	putchar('\n');
 
 	return (0);
 }
