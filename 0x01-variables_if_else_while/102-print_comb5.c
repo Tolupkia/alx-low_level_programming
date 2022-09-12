@@ -1,42 +1,42 @@
 #include <stdio.h>
 
 /**
- * main - print a num pair from 00-99 but no repeats (00 01, 00 02, 00 03,...)
- * Return: Always 0 (Success)
+ * main - print all possible comb of two digit numbers
+ * Return: Always 0(Success)
  */
 
 int main(void)
 {
-	int tens;
-	int ones;
-	int t;
-	int o;
+	int i, j;
+	int a, b, c, d;
 
-	for (tens = '0'; tens <= '9'; tens++)/*print first two digit combo*/
+	for (i = 0; i < 100; i++)
 	{
-		for (ones = '0'; ones <= '9'; ones++)
-		{
-			for (t = tens; t <= '9'; t++)/*print secont of pair*/
-			{
-				for (o = ones; o <= '9'; o++)
-				{
-					putchar(tens);
-					putchar(ones);
-					putchar(' ');
-					putchar(t);
-					putchar(o);
+		a = i / 10;/*doubles fnum*/
+		b = i % 10;/*singles fnum*/
 
-					if (!((tens == '9' && ones == '8') && (t == '9' && o == '9')))
-					{
-						putchar(',');
-						putchar(' ');
-					}
+		for (j = 0; j < 100; j++)
+		{
+			c = j / 10;/*doubles snum*/
+			d = j % 10;/*singles snum*/
+
+			if (a < c ||(a == c && b > d))
+			{
+				putchar(a + '0');
+				putchar(b + '0');
+				putchar(32);
+				putchar(c + '0');
+				putchar(d + '0');
+
+				if (!(a == 9 && b == 8))
+				{
+					putchar(44);
+					putchar(32);
 				}
-				o = '0';
 			}
 		}
 	}
-	putchar('\n');
+	putchar(10);
 
 	return (0);
 }
