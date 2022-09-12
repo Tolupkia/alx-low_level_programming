@@ -13,14 +13,14 @@ int main(void)
 
 	for (hundred = '0'; hundred <= '9'; hundred++) /*hundreds place*/
 	{
-		for (tens = (hundred + 1); ten <= '9'; ten++)/*tens = 100s + 1*/
+		for (tens = (hundred + 1); tens <= '9'; tens++)/*tens = 100s + 1*/
 		{
-			for (one = (ten + 1); one <= '9'; ones++)/*ones*/
+			for (ones = (tens + 1); ones <= '9'; ones++)/*ones*/
 			{
 				putchar(hundred);
-				putchar(ten);
-				putchar(one);
-				if (hundred != '7' || ten != '8' || one != '9')
+				putchar(tens);
+				putchar(ones);
+				if (hundred != '7' || tens != '8' || ones != '9')
 				{
 					putchar(',');
 					putchar(' ');
