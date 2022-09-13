@@ -12,10 +12,10 @@ int main(void)
 
 	while (s[i] != '0')
 	{
-		putchar(s[i]);
+		_putchar(s[i]);
 		i++;
 	}
-	putchar(10);
+	_putchar(10);
 
 	return (0);
 }
