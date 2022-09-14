@@ -10,7 +10,7 @@ int print_sign(int n)
 {
 	if (n > 0)
 	{
-		putchar('+');
+		_putchar('+');
 		return (1);
 	}
 	else if
@@ -20,7 +20,7 @@ int print_sign(int n)
 	}
 	else
 	{
-		putchar('-');
+		_putchar('-');
 		return (-1);
 	}
 }
