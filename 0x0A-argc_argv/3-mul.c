@@ -9,7 +9,7 @@
  * Return: 0 on success, 1 if two argument not given
  */
 
-int main(int agc, char *argv[])
+int main(int argc, char *argv[])
 {
 	/* validate input */
 	if (argc != 3)
