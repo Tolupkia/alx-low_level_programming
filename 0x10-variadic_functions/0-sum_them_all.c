@@ -1,4 +1,4 @@
-#include "variadic_functios.h"
+#include "variadic_functions.h"
 
 /**
  * sum_them_all - return sum when given unknown amount of arguments
